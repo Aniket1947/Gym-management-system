@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+
+<style media="screen">
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+  body {
+    background: linear-gradient(135deg, rgb(92, 89, 89), rgb(154, 150, 148));
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .jumbotron {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 40px 30px;
+    background: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(48, 46, 46, 0.3);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .jumbotron:hover {
+    transform: translateY(-5px); /* Moves up slightly instead of zooming */
+    box-shadow: 0 8px 30px rgba(48, 46, 46, 0.4); /* Enhanced shadow */
+  }
+
+  h1 span {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #ff8a50;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    color: #ff5722;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .jumbotron h1 {
+    font-size: 2.5rem;
+    color: #ff5722;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .jumbotron p.lead {
+    font-size: 1.2rem;
+    color: #ff5722;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .loading-dots {
+    display: inline-block;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .jumbotron hr {
+    border-top: 2px solid #ff8a50;
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #ff8a50, #ff5722);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 138, 80, 0.5);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #ff5722, #ff8a50);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.7);
+  }
+
+  .lead a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .jumbotron {
+      padding: 25px;
+    }
+    .jumbotron h1 {
+      font-size: 2rem;
+    }
+    .jumbotron p.lead {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<body>
+  {% include "gym/navbar.html" %}
+  <br /><br /><br />
+
+  <div class="jumbotron">
+    <h1 class="display-4">Hello, {{ request.user.first_name }}! 🎉</h1>
+    <p class="lead">
+      ⚡️ Your account is not approved yet as a trainer. <br />
+      Our team is reviewing your profile. <br /><br />
+      ✨ You’ll be hired soon! ✨
+    </p>
+    <hr class="my-4" />
+    <p>⏳ Check back later for updates.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/logout" role="button"
+        >Logout For Now</a
+      >
+    </p>
+  </div>
+  <br />
+
+  {% include "gym/footer.html" %}
+</body>
+</html>
