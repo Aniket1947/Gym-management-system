@@ -1,5 +1,5 @@
 
-If you want see more image downlaod screenshot of website.zip file and check it out if you the file contact me 8104258253                                  
+“If you want to see more images of the Gym Management System, just download the screenshot_of_website.zip file and check it out. For any queries, feel free to contact me at 8104258253.”                         
 Home Page of our website
 ![Alt Text](https://github.com/Aniket1947/Gym-management-system/blob/f23e5cd1707bddacc46bf7a1308d343514ea3544/home%20page.JPG)
 About-us Page of our website
